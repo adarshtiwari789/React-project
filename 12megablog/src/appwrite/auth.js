@@ -27,7 +27,8 @@ export class Authservices {
                 throw error
             } 
 
-  }
+                               }
+                               
           async login ({email,password}){
             try {
            return await this.account.createEmailPasswordSession(email, password);  
@@ -44,6 +45,7 @@ export class Authservices {
              catch (error) {
             console.log("appwrite serivce : getcurrentuser ::errror " , error)
             }
+            return null
           }
 
           async logout (){

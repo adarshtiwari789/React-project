@@ -9,7 +9,9 @@ function LogoutBtn() {
     then(() => dispatch(logout())) }  
     return (
     <button className='inline-block px-6 py-2 duration-200
-     rounded-full' >Logout</button>
+     rounded-full' 
+     onClick={logoutHandler}
+     >Logout</button>
   )
 }
 
