@@ -6,19 +6,15 @@ import { Provider } from 'react-redux'
 import store from './store/store.js'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import { Authlayout, Login } from './components/index.js'
+import { AuthLayout, Login } from './components/index.js'
 
 
-import AddPost from "./pages/Addpost";
+import AddPost from './pages/Addpost.jsx'
 import Signup from './pages/Signup'
-import EditPost from "./pages/Editpost";
-
+import EditPost from './pages/Editpost.jsx'
 import Post from "./pages/Post";
 
-import Allpost from "./pages/Allpost";
-
-
-
+import AllPosts from './pages/Allpost.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,44 +28,44 @@ const router = createBrowserRouter([
         {
             path: "/login",
             element: (
-                <Authlayout authentication={false}>
+                <AuthLayout authentication={false}>
                     <Login />
-                </Authlayout>
+                </AuthLayout>
             ),
         },
         {
             path: "/signup",
             element: (
-                <Authlayout authentication={false}>
+                <AuthLayout authentication={false}>
                     <Signup />
-                </Authlayout>
+                </AuthLayout>
             ),
         },
         {
             path: "/all-posts",
             element: (
-                <Authlayout authentication>
+                <AuthLayout authentication>
                     {" "}
-                    <Allpost />
-                </Authlayout>
+                    <AllPosts />
+                </AuthLayout>
             ),
         },
         {
             path: "/add-post",
             element: (
-                <Authlayout authentication>
+                <AuthLayout authentication>
                     {" "}
                     <AddPost />
-                </Authlayout>
+                </AuthLayout>
             ),
         },
         {
             path: "/edit-post/:slug",
             element: (
-                <Authlayout authentication>
+                <AuthLayout authentication>
                     {" "}
                     <EditPost />
-                </Authlayout>
+                </AuthLayout>
             ),
         },
         {
@@ -83,7 +79,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
- <RouterProvider router={router} />
-   </Provider>
-  </React.StrictMode>
+    <RouterProvider router={router}/>
+    </Provider>
+  </React.StrictMode>,
 )
